@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { classifications } from "../Data";
+import { classifications } from "../assets/Data";
 
 function Output({ bmi } : {bmi : number;}) {
 
@@ -15,8 +15,17 @@ function Output({ bmi } : {bmi : number;}) {
 
     return(
         <div className="output-section">
-            <h4>{bmi} kg/m2</h4>
-            <h5>{classification}</h5>
+            {bmi > 0 ? 
+                (
+                    <span>
+                        <h4>BMI: {bmi.toFixed(2)} kg/m2</h4> 
+                        <h5>({classification})</h5>
+                    </span> 
+                ) : 
+                (
+                    null
+                )
+            }                       
         </div>
     );
 }

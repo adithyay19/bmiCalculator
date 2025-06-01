@@ -6,15 +6,13 @@ import Output from "./components/Output";
 
 function App() {
   const [bmi, setBmi] = useState(0);
-  // const [weightUnit, setWeightUnit] = useState("");
-  // const [heightUnit, setHeightUnit] = useState("");
 
   return (
     <>
       <header>
         <Header />
       </header>
-      <div>
+      <div className="app-content">
         <InputForm setBmi={setBmi} />
         <Output bmi={bmi}/>
       </div>
